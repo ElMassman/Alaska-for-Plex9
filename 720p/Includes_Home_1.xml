@@ -18,7 +18,7 @@
 			<content>
 				<item id="1">
 					<description>Programs</description>
-					<onclick>ActivateWindow(Programs,Addons,return)</onclick>
+					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
 					<visible>!Skin.HasSetting(noprograms)</visible>
 				</item>
 				<item id="2">
@@ -85,7 +85,7 @@
 				<include>Home_MainMenuPanel</include>
 				<control type="fadelabel">
 					<include>Home_MainMenuLabel</include>
-					<label>$LOCALIZE[24001]</label>
+					<label>Plex Online</label>
 					<visible>!ControlGroup(3100).HasFocus()</visible>
 					<animation effect="slide" end="16,0" condition="!Container(300).HasFocus(1) | ![Control.IsVisible(398) | Control.IsVisible(399)]">Conditional</animation>
 				</control>
