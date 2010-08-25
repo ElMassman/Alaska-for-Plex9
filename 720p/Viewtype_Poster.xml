@@ -210,7 +210,7 @@
 			<include>Animation_HiddenByMusicInfo</include>
 			<onup>7000</onup>
 			<ondown>7777</ondown>
-			<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(studios) | Container.Content(albums) | Window.IsVisible(28) | Window.IsVisible(501) | !IsEmpty(Container.PluginName)</visible>
+			<visible>Container.Content(albums) | Window.IsVisible(28) | Window.IsVisible(501) | !IsEmpty(Container.PluginName)</visible>
 			<itemlayout width="200" height="200">
 				<control type="image">
 					<posx>2</posx>

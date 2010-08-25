@@ -16,6 +16,7 @@
 	<include file="Includes_Objects.xml" />
 	<include file="Includes_Overlays.xml" />
 	<include file="Includes_Home_1.xml" />
+	<include file="Includes_Home_Plex.xml" />
 	<include file="Includes_HomeCustomButtons.xml" />
 	<!-- Debug objects -->
 	<include name="Object_DebugGrid">
@@ -99,6 +100,13 @@
 					<width>300</width>
 					<font>Font_Time</font>
 					<textcolor>Time</textcolor>
+					<label>$INFO[System.Time(hh:mm)]</label>
+					<align>right</align>
+				</control>
+				<!--control type="label">
+					<width>300</width>
+					<font>Font_Time</font>
+					<textcolor>Time</textcolor>
 					<label>$INFO[System.Time(hh:mm)] [COLOR TimeAMPM]$LOCALIZE[40155][/COLOR]</label>
 					<align>right</align>
 					<visible>substring(system.time,AM,right)</visible>
@@ -110,7 +118,7 @@
 					<label>$INFO[System.Time(hh:mm)] [COLOR TimeAMPM]$LOCALIZE[40156][/COLOR]</label>
 					<align>right</align>
 					<visible>substring(system.time,PM,right)</visible>
-				</control>
+				</control-->
 				<control type="label">
 					<width>300</width>
 					<font>Font_Time</font>

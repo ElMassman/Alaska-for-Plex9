@@ -1,0 +1,159 @@
+<!--Alaska-->
+<includes>
+	<!-- Home Plex -->
+	<include name="Home_MenuPlex">
+		<control type="fixedlist" id="300">
+			<posx>-285</posx>
+			<posy>175</posy>
+			<height>400</height>
+			<width>1730</width>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<ondown>SetFocus(3999)</ondown>
+			<scrolltime>300</scrolltime>
+			<orientation>horizontal</orientation>
+			<focusposition>2</focusposition>
+			<itemlayout width="370" height="320">
+				<control type="group">
+				<animation type="conditional" condition="True">
+					<effect type="zoom" center="185,160" tween="sine" easing="in" time="0" start="100" end="80" />
+				</animation>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Property(fanart_image)]</texture>
+					<visible>IsEmpty(Listitem.Thumb)</visible>
+				</control>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Icon]</texture>
+				</control>
+				<include>Home_MainMenuPanel</include>
+				<control type="label">
+					<posx>350</posx>
+					<include>Home_MainMenuLabel</include>
+					<info>Listitem.Label</info>
+				</control>
+				</control>
+			</itemlayout>
+			<focusedlayout width="370" height="320">
+				<control type="group">
+				<animation type="conditional" condition="True">
+					<effect type="zoom" center="185,160" tween="sine" easing="out" time="200" start="80" end="100" />
+				</animation>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Property(fanart_image)]</texture>
+					<visible>IsEmpty(Listitem.Thumb)</visible>
+				</control>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Thumb]</texture>
+				</control>
+				<include>Home_MainMenuPanel</include>
+				<control type="label">
+					<posx>350</posx>
+					<include>Home_MainMenuLabel</include>
+					<info>Listitem.Label</info>
+					<visible>!ControlGroup(3100).HasFocus()</visible>
+				</control>
+				<include condition="Container(300)HasFocus(1)">SubMenu_Online</include>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<description>Plex Online</description>
+					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
+					<visible>!Skin.HasSetting(noprograms)</visible>
+					<label>Plex Online</label>
+					<thumb>../backdrops/programs.jpg</thumb>
+				</item>
+				<item id="2">
+					<description>Videos</description>
+					<onclick>ActivateWindow(VideoFiles)</onclick>
+					<visible>!Skin.HasSetting(novideos)</visible>
+					<label>Video Plug-ins</label>
+					<thumb>../backdrops/videos.jpg</thumb>
+				</item>
+				<item id="3">
+					<description>Music</description>
+					<onclick>ActivateWindow(Music)</onclick>
+					<label>Music Plug-ins</label>
+					<thumb>../backdrops/music.jpg</thumb>
+				</item>
+				<!--item id="4">
+					<description>Movies</description>
+					<onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
+				</item>
+				<item id="5">
+					<description>Tv Shows</description>
+					<onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
+				</item-->
+				<item id="6">
+					<description>Pictures</description>
+					<onclick>ActivateWindow(Pictures)</onclick>
+					<visible>!Skin.HasSetting(nopictures)</visible>
+					<label>Pictures Plug-ins</label>
+					<thumb>../backdrops/pictures.jpg</thumb>
+				</item>
+				<item id="7">
+					<description>Weather</description>
+					<onclick>ActivateWindow(2600)</onclick>
+					<visible>!Skin.HasSetting(noweather)</visible>
+					<label>Weather</label>
+					<thumb>../backdrops/weather.jpg</thumb>
+				</item>
+				<item id="8">
+					<description>Settings</description>
+					<onclick>ActivateWindow(4)</onclick>
+					<visible>!Skin.HasSetting(nosettings)</visible>
+					<label>Settings</label>
+					<thumb>../backdrops/settings.jpg</thumb>
+				</item>
+			</content>
+		</control>
+	</include>
+	
+	<include name="Home_MainMenuIconF">
+		<width>349</width>
+		<height>260</height>
+		<posx>10</posx>
+		<posy>10</posy>
+		<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+	</include>
+	<include name="Home_MainMenuPanel">
+		<control type="image">
+			<width>370</width>
+			<height>56</height>
+			<posx>0</posx>
+			<posy>265</posy>
+			<texture>mainmenu/homeback.png</texture>
+			<colordiffuse>HomeWindowTextBackgroundColour</colordiffuse>
+		</control>
+		<control type="image">
+			<width>370</width>
+			<height>320</height>
+			<posx>0</posx>
+			<posy>0</posy>
+			<texture>mainmenu/frame.png</texture>
+			<colordiffuse>HomeWindowFrameColor</colordiffuse>
+		</control>
+		<control type="image">
+			<width>370</width>
+			<height>320</height>
+			<posx>0</posx>
+			<posy>0</posy>
+			<texture>mainmenu/homeglass.png</texture>
+		</control>
+	</include>
+	<include name="Home_MainMenuLabel">
+		<posy>284</posy>
+		<width>305</width>
+		<align>right</align>
+		<aligny>center</aligny>
+		<scroll>true</scroll>
+		<font>Font_MainMenuLabel</font>
+		<textcolor>HomeWindowTextColour</textcolor>
+		<focusedcolor>HomeWindowTextColour</focusedcolor>
+	</include>
+
+</includes>

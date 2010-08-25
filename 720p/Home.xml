@@ -1,9 +1,9 @@
 <!--Alaska-->
 <window id="0">
-	<defaultcontrol always="true">5043</defaultcontrol>
+	<defaultcontrol always="true">300</defaultcontrol><!--5043-->
 	<allowoverlay>yes</allowoverlay>
 	<controls>
-		<control type="button" id="5043">
+		<!--control type="button" id="5043">
 			<description>visible after library update has finished</description>
 			<posx>-20</posx>
 			<posy>-20</posy>
@@ -26,13 +26,13 @@
 			<texturefocus>-</texturefocus>
 			<onfocus>SetFocus(300)</onfocus>
 			<visible>!Skin.HasSetting(LibraryUpdated) | [Skin.HasSetting(LibraryUpdated) + [Window.IsVisible(112) | Window.IsVisible(133)]]</visible>
-		</control>
+		</control-->
 		<include>Global_Background</include>
 		<include>Global_Filter</include>
 		<!--include condition="![Skin.HasSetting(home2) | Skin.HasSetting(home3)]">Home_MenuImage</include>
 		<include condition="Skin.HasSetting(home2)">Home_MenuIcon</include>
 		<include condition="Skin.HasSetting(home3)">Home_MenuList</include-->
-		<include>Home_MenuList</include>
+		<include>Home_MenuPlex</include>
 		<include>Global_ContextFilter</include>
 		<include>Global_Time</include>
 		<include>Global_RSS</include>

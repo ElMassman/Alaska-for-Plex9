@@ -21,7 +21,7 @@
 			<onup>60</onup>
 			<ondown>60</ondown>
 			<scrolltime>200</scrolltime>
-			<viewtype label="536">icon</viewtype>
+			<viewtype label="536">thumb</viewtype>
 			<include>Animation_ZoomedByMenu</include>
 			<include>Animation_SettingsFloat</include>
 			<include>Animation_ZoomInZoomOut</include>
@@ -40,7 +40,7 @@
 					<posy>0</posy>
 					<width>200</width>
 					<height>200</height>
-					<texture>$INFO[ListItem.Icon]</texture>
+					<texture>$INFO[ListItem.Thumb]</texture>
 					<colordiffuse>white</colordiffuse>
 					<animation effect="zoom" start="80" end="80" center="100,100" time="0" condition="true">Conditional</animation>
 				</control>
@@ -63,7 +63,7 @@
 					<posy>0</posy>
 					<width>200</width>
 					<height>200</height>
-					<texture>$INFO[ListItem.Icon]</texture>
+					<texture>$INFO[ListItem.Thumb]</texture>
 					<animation type="Focus" reversible="false">
 						<effect type="zoom" start="80" end="100" center="100,100" time="300" tween="cubic" easing="in" />
 						<effect type="fade" start="0" end="100" time="300" />
@@ -74,55 +74,55 @@
 				<item id="1">
 					<description>Video</description>
 					<label>$LOCALIZE[3]</label>
-					<icon>settings/settings_video.png</icon>
+					<thumb>settings/settings_video.png</thumb>
 					<onclick>ActivateWindow(VideosSettings)</onclick>
 				</item>
 				<item id="2">
 					<description>Music</description>
 					<label>$LOCALIZE[2]</label>
-					<icon>settings/settings_music.png</icon>
+					<thumb>settings/settings_music.png</thumb>
 					<onclick>ActivateWindow(MusicSettings)</onclick>
 				</item>
 				<item id="3">
 					<description>Pictures</description>
 					<label>$LOCALIZE[1]</label>
-					<icon>settings/settings_pictures.png</icon>
+					<thumb>settings/settings_pictures.png</thumb>
 					<onclick>ActivateWindow(PicturesSettings)</onclick>
 				</item>
 				<item id="4">
 					<description>Add-Ons</description>
 					<label>$LOCALIZE[24001]</label>
-					<icon>settings/settings_addons.png</icon>
+					<thumb>settings/settings_addons.png</thumb>
 					<onclick>ActivateWindow(AddonBrowser)</onclick>
 				</item>
 				<item id="5">
 					<description>Weather</description>
 					<label>$LOCALIZE[8]</label>
-					<icon>settings/settings_weather.png</icon>
+					<thumb>settings/settings_weather.png</thumb>
 					<onclick>ActivateWindow(WeatherSettings)</onclick>
 				</item>
 				<item id="6">
 					<description>Network</description>
 					<label>$LOCALIZE[705]</label>
-					<icon>settings/settings_network.png</icon>
+					<thumb>settings/settings_network.png</thumb>
 					<onclick>ActivateWindow(NetworkSettings)</onclick>
 				</item>
 				<item id="7">
 					<description>System</description>
 					<label>$LOCALIZE[13000]</label>
-					<icon>settings/settings_system.png</icon>
+					<thumb>settings/settings_system.png</thumb>
 					<onclick>ActivateWindow(SystemSettings)</onclick>
 				</item>
 				<item id="8">
 					<description>Appearence</description>
 					<label>$LOCALIZE[480]</label>
-					<icon>settings/settings_appearance.png</icon>
+					<thumb>settings/settings_appearance.png</thumb>
 					<onclick>ActivateWindow(AppearanceSettings)</onclick>
 				</item>
 				<item id="9">
 					<description>Alaska</description>
 					<label>$LOCALIZE[40210]</label>
-					<icon>settings/settings_alaska.png</icon>
+					<thumb>settings/settings_alaska.png</thumb>
 					<onclick>ActivateWindow(56)</onclick>
 				</item>
 			</content>
