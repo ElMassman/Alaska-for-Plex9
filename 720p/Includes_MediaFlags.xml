@@ -137,20 +137,20 @@
 				<posx>150</posx>
 				<visible>!Skin.HasSetting(novideopanel)</visible>
 				<control type="image">
-					<posx>-19</posx>
-					<width>100</width>
+					<posx>-3</posx>
+					<width>71</width>
 					<height>36</height>
 					<include>PosterMediaFlagsVars</include>
 					<texture>$INFO[ListItem.Property(mediaTag::videoResolution)]</texture>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="image">
-					<posx>62</posx>
-					<width>100</width>
+					<posx>77</posx>
+					<width>71</width>
 					<height>36</height>
 					<include>PosterMediaFlagsVars</include>
 					<texture>$INFO[ListItem.Property(mediaTag::aspectRatio)]</texture>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 				</control>
 
 			<!-- Video Codec Panel -->

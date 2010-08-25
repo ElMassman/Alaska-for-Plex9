@@ -118,7 +118,7 @@
 					<label>$INFO[System.Time(hh:mm)] [COLOR TimeAMPM]$LOCALIZE[40156][/COLOR]</label>
 					<align>right</align>
 					<visible>substring(system.time,PM,right)</visible>
-				</control-->
+				</control>
 				<control type="label">
 					<width>300</width>
 					<font>Font_Time</font>
@@ -126,11 +126,19 @@
 					<info>System.Time(hh:mm)</info>
 					<align>right</align>
 					<visible>![substring(system.time,PM,right) | substring(system.time,AM,right)]</visible>
-				</control>
+				</control-->
 			</control>
 			<control type="group">
 				<visible>Skin.HasSetting(ShowGlobalTemp)</visible>
+
 				<control type="label">
+					<width>300</width>
+					<font>Font_Time</font>
+					<textcolor>Time</textcolor>
+					<label>$INFO[System.Time(hh:mm)] [COLOR TimeAMPM] $INFO[Weather.Temperature][/COLOR]</label>
+					<align>right</align>
+				</control>
+				<!--control type="label">
 					<width>300</width>
 					<font>Font_Time</font>
 					<textcolor>Time</textcolor>
@@ -153,7 +161,7 @@
 					<label>$INFO[System.Time(hh:mm)] $INFO[Weather.Temperature]</label>
 					<align>right</align>
 					<visible>![substring(system.time,PM,right) | substring(system.time,AM,right)]</visible>
-				</control>
+				</control-->
 			</control>
 			<control type="label">
 				<posx>-2</posx>

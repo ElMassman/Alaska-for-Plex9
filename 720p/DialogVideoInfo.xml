@@ -34,32 +34,6 @@
 				<font>Font_InfoYear2</font>
 				<textcolor>InfoYear</textcolor>
 				<info>ListItem.Duration</info>
-				<visible>substring(listitem.Duration,hrs)</visible>
-				<visible>!IsEmpty(listitem.Duration)</visible>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>260</width>
-				<height>76</height>
-				<aligny>center</aligny>
-				<font>Font_InfoYear</font>
-				<textcolor>InfoYear</textcolor>
-				<info>ListItem.Duration</info>
-				<visible>substring(listitem.Duration,min)</visible>
-				<visible>!substring(listitem.Duration,hrs)</visible>
-				<visible>!IsEmpty(listitem.Duration)</visible>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>260</width>
-				<height>76</height>
-				<aligny>center</aligny>
-				<font>Font_InfoYear</font>
-				<textcolor>InfoYear</textcolor>
-				<label>$INFO[ListItem.Duration,, mins]</label>
-				<visible>!substring(listitem.Duration,min)</visible>
 				<visible>!IsEmpty(listitem.Duration)</visible>
 			</control>
 			<control type="label">
@@ -86,106 +60,10 @@
 			</control>
 			<control type="image">
 				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/mpaa_restricted.png</texture>
+				<texture>$INFO[ListItem.Property(mediaTag::contentRating)]</texture>
 				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Rated R,Left)</visible>
 			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/mpaa_pg13.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Rated PG-13,Left)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/mpaa_pg.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Rated PG,Left) + !substring(listitem.mpaa,Rated PG-13,Left)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/mpaa_nc17.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Rated NC,Left)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/mpaa_general.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Rated G,Left)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/bbfc_u.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,UK:U)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/bbfc_pg.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,UK:PG)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/bbfc_12.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,UK:12)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/bbfc_15.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,UK:15)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/bbfc_18.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,UK:18)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/bbfc_18.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,UK:X)</visible>
-			</control>
-			<!-- German Ratings<control type="image" id="171"><include>Objects_FSDEInfoCertificate</include><texture>flags/Rating/FSK-0_info.png</texture><colordiffuse>InfoRating</colordiffuse><visible>substring(listitem.mpaa,Germany:0) | substring(listitem.mpaa,o.A)</visible></control><control type="image" id="171"><include>Objects_FSDEInfoCertificate</include><texture>flags/Rating/FSK-6_info.png</texture><colordiffuse>InfoRating</colordiffuse><visible>substring(listitem.mpaa,Germany:6) | substring(listitem.mpaa,ab 6)</visible></control><control type="image" id="171"><include>Objects_FSDEInfoCertificate</include><texture>flags/Rating/FSK-12_info.png</texture><colordiffuse>InfoRating</colordiffuse><visible>substring(listitem.mpaa,Germany:12) | substring(listitem.mpaa,ab 12)</visible></control><control type="image" id="171"><include>Objects_FSDEInfoCertificate</include><texture>flags/Rating/FSK-16_info.png</texture><colordiffuse>InfoRating</colordiffuse><visible>substring(listitem.mpaa,Germany:16) | substring(listitem.mpaa,ab 16)</visible></control><control type="image" id="171"><include>Objects_FSDEInfoCertificate</include><texture>flags/Rating/FSK-18_info.png</texture><colordiffuse>InfoRating</colordiffuse><visible>substring(listitem.mpaa,Germany:18) | substring(listitem.mpaa,ab 18)</visible></control>--><control type="image" id="170">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/australia_r.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Australia:R)</visible>
-			</control>
-			<control type="image" id="170">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/australia_m.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Australia:M) + ! substring(listitem.mpaa,Australia:MA)</visible>
-			</control>
-			<control type="image" id="170">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/australia_ma.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Australia:MA)</visible>
-			</control>
-			<control type="image" id="170">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/australia_pg.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Australia:PG)</visible>
-			</control>
-			<control type="image" id="170">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>flags/Rating/australia_g.png</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,Australia:G)</visible>
-			</control>
-			<control type="image">
-				<include>Objects_FSInfoCertificate</include>
-				<texture>$INFO[listitem.mpaa,flags/Rating/,.png]</texture>
-				<colordiffuse>InfoRating</colordiffuse>
-				<visible>substring(listitem.mpaa,TV-,Left)</visible>
-			</control>
+			
 			<control type="label">
 				<posx>0</posx>
 				<posy>140</posy>

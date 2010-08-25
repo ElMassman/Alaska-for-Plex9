@@ -49,6 +49,10 @@
 					<include>Home_MainMenuIconF</include>
 					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Thumb]</texture>
 				</control>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Icon]</texture>
+				</control>
 				<include>Home_MainMenuPanel</include>
 				<control type="label">
 					<posx>350</posx>
@@ -66,6 +70,7 @@
 					<visible>!Skin.HasSetting(noprograms)</visible>
 					<label>Plex Online</label>
 					<thumb>../backdrops/programs.jpg</thumb>
+					<icon>$INFO[Skin.String(CustomProgramsImage)]</icon>
 				</item>
 				<item id="2">
 					<description>Videos</description>
