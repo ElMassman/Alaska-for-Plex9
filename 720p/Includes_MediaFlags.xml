@@ -137,79 +137,22 @@
 			<control type="group">
 				<posx>376</posx>
 				<visible>!Skin.HasSetting(novideopanel)</visible>
-				<animation effect="slide" start="0,0" end="108,0" condition="Skin.HasSetting(noaudiopanel) | IsEmpty(ListItem.AudioChannels)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="108,0" condition="Skin.HasSetting(nostudiopanel) | IsEmpty(ListItem.Studio) | StringCompare(Control.GetLabel(3500),empty)">Conditional</animation>
 				<control type="image">
-					<width>167</width>
+					<width min="1" max="95">auto</width>
 					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_480.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoResolution,480)</visible>
+					<texture>$INFO[ListItem.Property(mediaTag::videoResolution)]</texture>
 				</control>
 				<control type="image">
-					<width>167</width>
+					<posx>108</posx>
+					<width min="1" max="95">auto</width>
 					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_540.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoResolution,540)</visible>
+					<texture>$INFO[ListItem.Property(mediaTag::aspectRatio)]</texture>
 				</control>
 				<control type="image">
-					<width>167</width>
-					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_720.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoResolution,720)</visible>
-				</control>
-				<control type="image">
-					<width>167</width>
-					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_1080.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoResolution,1080)</visible>
-				</control>
-				<control type="image">
-					<width>167</width>
-					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_133.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoAspect,1.33)</visible>
-				</control>
-				<control type="image">
-					<width>167</width>
-					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_166.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoAspect,1.66)</visible>
-				</control>
-				<control type="image">
-					<width>167</width>
-					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_178.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoAspect,1.78)</visible>
-				</control>
-				<control type="image">
-					<width>167</width>
-					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_185.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoAspect,1.85)</visible>
-				</control>
-				<control type="image">
-					<width>167</width>
-					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_220.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoAspect,2.20)</visible>
-				</control>
-				<control type="image">
-					<width>167</width>
-					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_235.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + substring(ListItem.VideoAspect,2.35)</visible>
-				</control>
-				<control type="image">
-					<width>167</width>
-					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_aspect_right.png</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution) + IsEmpty(ListItem.VideoAspect)</visible>
-				</control>
-				<control type="image">
+				<posx>216</posx>
+				<width min="1" max="95">auto</width>
 					<include>PosterMediaFlagsVarsCodec</include>
-					<texture fallback="empty">$INFO[Listitem.VideoCodec,flags/VideoCodec/,.png]</texture>
-					<visible>!substring(listitem.filename,hdtv) + !substring(listitem.filename,dvd) + !substring(listitem.filename,bluray) + !substring(listitem.filename,blu-ray) + !substring(listitem.filename,bdrip) + !substring(listitem.filename,.iso,Right) + !substring(listitem.filename,.ifo,Right) + !substring(listitem.filename,sdtv)</visible>
-					<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+					<texture>$INFO[Listitem.Property(mediaTag::videoCodec)]</texture>
 				</control>
 				<control type="image">
 					<include>PosterMediaFlagsVarsCodec</include>
