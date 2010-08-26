@@ -2,8 +2,6 @@
 <window type="dialog" id="134">
 	<defaultcontrol always="true">450</defaultcontrol>
 	<controls>
-		<include>Global_Background</include>
-		<include>Global_Filter</include>
 		<include>Animation_ZoomedByMenu</include>
 		<include>Animation_ZoomInZoomOut</include>
 		<control type="image">
@@ -76,13 +74,11 @@
 			<posx>30</posx>
 			<posy>30</posy>
 			<include>Animation_SlideDownFadeOut</include>
-			<control type="label">
+			<!--control type="label">
 				<label>$LOCALIZE[1036]</label>
 				<include>Global_HeadingSectionVars</include>
-			</control>
+			</control-->
 		</control>
-		<include>Global_Time</include>
-		<include>Global_RSS</include>
 		<include>Object_DebugGrid</include>
 		<control type="group">
 			<include>Debug</include>

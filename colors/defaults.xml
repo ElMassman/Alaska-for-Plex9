@@ -24,6 +24,7 @@
 
 	<color name="HomeWindowFrameColor">FFE0E0E0</color>
 	<color name="HomeWindowTextColour">bb383737</color>
+	<color name="HomeWindowTextColour2">66383737</color>
 	<color name="HomeWindowTextBackgroundColour">FEFFFFFF</color>
 
 	<!-- Home 2 & 3 Colour -->

@@ -1,6 +1,6 @@
 <!--Alaska-->
 <window id="0">
-	<defaultcontrol always="true">300</defaultcontrol><!--5043-->
+	<defaultcontrol always="true">800</defaultcontrol><!--5043-->
 	<allowoverlay>yes</allowoverlay>
 	<controls>
 		<!--control type="button" id="5043">
@@ -13,7 +13,7 @@
 			<texturefocus>-</texturefocus>
 			<onfocus>XBMC.RunScript(script.recentlyadded,limit=5&amp;albums=True&amp;unplayed=True&amp;totals=True)</onfocus>
 			<onfocus>Skin.Reset(LibraryUpdated)</onfocus>
-			<onfocus>SetFocus(300)</onfocus>
+			<onfocus>SetFocus(800)</onfocus>
 			<visible>Skin.HasSetting(LibraryUpdated) + !Window.IsVisible(112) + !Window.IsVisible(133)</visible>
 		</control>
 		<control type="button" id="5043">
@@ -24,7 +24,7 @@
 			<height>1</height>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
-			<onfocus>SetFocus(300)</onfocus>
+			<onfocus>SetFocus(800)</onfocus>
 			<visible>!Skin.HasSetting(LibraryUpdated) | [Skin.HasSetting(LibraryUpdated) + [Window.IsVisible(112) | Window.IsVisible(133)]]</visible>
 		</control-->
 		<include>Global_Background</include>
