@@ -123,7 +123,7 @@
 				</control>
 				<control type="image">
 					<colordiffuse>FlagDiffuse</colordiffuse>
-					<posx>6</posx>
+					<posx>8</posx>
 					<posy>8</posy>
 					<width>55</width>
 					<height>20</height>
@@ -137,12 +137,26 @@
 				<posx>150</posx>
 				<visible>!Skin.HasSetting(novideopanel)</visible>
 				<control type="image">
+					<posx>-4</posx>
+					<width>73</width>
+					<include>PosterMediaFlagsVars</include>
+					<texture>flags/frame_res.png</texture>
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+				</control>
+				<control type="image">
 					<posx>-3</posx>
 					<width>71</width>
 					<height>36</height>
 					<include>PosterMediaFlagsVars</include>
 					<texture>$INFO[ListItem.Property(mediaTag::videoResolution)]</texture>
 					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>76</posx>
+					<width>73</width>
+					<include>PosterMediaFlagsVars</include>
+					<texture>flags/frame_year.png</texture>
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
 				</control>
 				<control type="image">
 					<posx>77</posx>

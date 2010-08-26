@@ -32,7 +32,7 @@
 					<selectedcolor>ListSelectedNF</selectedcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<scroll>false</scroll>
-					<visible>IsEmpty(ListItem.Title) | IsEmpty(ListItem.Episode) + [Window.IsVisible(24) | ![Window.IsVisible(1) | Window.IsVisible(502) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
+					<visible>IsEmpty(ListItem.Title) | IsEmpty(ListItem.Episode) + [Window.IsVisible(6) | ![Window.IsVisible(1) | Window.IsVisible(502) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
 				</control>
 				<control type="label">
 					<posx>770</posx>
@@ -190,7 +190,7 @@
 					<textcolor>ListTitleFO</textcolor>
 					<selectedcolor>ListSelectedFO</selectedcolor>
 					<label>$INFO[ListItem.Label]</label>
-					<visible>IsEmpty(ListItem.Title) | IsEmpty(ListItem.Episode) + [Window.IsVisible(24) | ![Window.IsVisible(1) | Window.IsVisible(502) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
+					<visible>IsEmpty(ListItem.Title) | IsEmpty(ListItem.Episode) + [Window.IsVisible(6) | ![Window.IsVisible(1) | Window.IsVisible(502) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
 				</control>
 				<control type="label">
 					<posx>770</posx>
