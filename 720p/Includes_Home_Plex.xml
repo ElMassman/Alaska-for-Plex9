@@ -34,6 +34,11 @@
 					<include>Home_MainMenuLabel</include>
 					<info>Listitem.Label</info>
 				</control>
+				<control type="label">
+					<posx>350</posx>
+					<include>Home_MainMenuLabel</include>
+					<info>Listitem.Label</info>
+				</control>
 				</control>
 			</itemlayout>
 			<focusedlayout width="370" height="320">
@@ -41,7 +46,7 @@
 				<animation type="conditional" condition="True">
 					<effect type="zoom" center="185,160" tween="sine" easing="out" time="200" start="80" end="100" />
 				</animation>
-				<visible>![Container(300).HasFocus(1) | Container(300).HasFocus(2)]</visible>
+				<visible>![Container(300).HasFocus(1) | Container(300).HasFocus(2) | Container(300).HasFocus(8)]</visible>
 				<control type="image">
 					<include>Home_MainMenuIconF</include>
 					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Property(fanart_image)]</texture>
@@ -79,27 +84,6 @@
 					<label>Plug-ins</label>
 					<thumb>../backdrops/videos.jpg</thumb>
 				</item>
-				<!--item id="3">
-					<description>Music</description>
-					<onclick>ActivateWindow(Music)</onclick>
-					<label>Music Plug-ins</label>
-					<thumb>../backdrops/music.jpg</thumb>
-				</item-->
-				<!--item id="4">
-					<description>Movies</description>
-					<onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
-				</item>
-				<item id="5">
-					<description>Tv Shows</description>
-					<onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
-				</item-->
-				<!--item id="6">
-					<description>Pictures</description>
-					<onclick>ActivateWindow(Pictures)</onclick>
-					<visible>!Skin.HasSetting(nopictures)</visible>
-					<label>Pictures Plug-ins</label>
-					<thumb>../backdrops/pictures.jpg</thumb>
-				</item-->
 				<item id="7">
 					<description>Weather</description>
 					<onclick>ActivateWindow(2600)</onclick>
@@ -161,6 +145,9 @@
 		<textcolor>HomeWindowTextColour</textcolor>
 		<focusedcolor>HomeWindowTextColour</focusedcolor>
 	</include>
+	<include name="submenu_imagefade">
+		<animation effect="fade" start="0" end="100" time="400">Focus</animation>
+	</include>
 
 	<!-- Sub Menus -->
 
@@ -176,13 +163,18 @@
 			<visible>Container(300).HasFocus(2) + Control.IsVisible(200)</visible>
 		</control>
 
+	<control type="button" id="1001">
+			<onfocus>SetFocus(400)</onfocus>
+			<visible>Container(300).HasFocus(8) + Control.IsVisible(400)</visible>
+		</control>
+
 	<!-- Plex Online Sub Menu -->
 
 	<control type="fixedlist" id="100">
 			<posx>455</posx>
 			<posy>175</posy>
-			<height>400</height>
-			<width>700</width>
+			<height>320</height>
+			<width>370</width>
 			<onright>300</onright>
 			<onleft>300</onleft>
 			<ondown>100</ondown>
@@ -191,17 +183,17 @@
 			<focusposition>0</focusposition>
 			<scrolltime>0</scrolltime>
 			<visible>Container(300).HasFocus(1)</visible>
+			<animation type="conditional" condition="Container(300).HasFocus(1)">
+				<effect type="slide" start="-370,0" end="0,0" time="300" />
+			</animation>
 			<itemlayout width="370" height="320">
 			</itemlayout>
 			<focusedlayout width="370" height="320">
 				<control type="group">
 				<control type="image">
 					<include>Home_MainMenuIconF</include>
-					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Thumb]</texture>
-				</control>
-				<control type="image">
-					<include>Home_MainMenuIconF</include>
 					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Icon]</texture>
+					<include>submenu_imagefade</include>
 				</control>
 				<include>Home_MainMenuPanel</include>
 				<control type="image" id="398">
@@ -249,8 +241,8 @@
 	<control type="fixedlist" id="200">
 			<posx>455</posx>
 			<posy>175</posy>
-			<height>400</height>
-			<width>700</width>
+			<height>320</height>
+			<width>370</width>
 			<onright>300</onright>
 			<onleft>300</onleft>
 			<ondown>200</ondown>
@@ -259,18 +251,20 @@
 			<focusposition>0</focusposition>
 			<scrolltime>0</scrolltime>
 			<visible>Container(300).HasFocus(2)</visible>
+			<animation type="conditional" condition="Container(300).HasFocus(1)">
+				<effect type="slide" start="0,0" end="370,0" time="300" />
+			</animation>
+			<animation type="conditional" condition="Container(300).HasFocus(7)">
+				<effect type="slide" start="0,0" end="-370,0" time="300" />
+			</animation>
 			<itemlayout width="370" height="320">
 			</itemlayout>
 			<focusedlayout width="370" height="320">
 				<control type="group">
-
-				<control type="image">
-					<include>Home_MainMenuIconF</include>
-					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Thumb]</texture>
-				</control>
 				<control type="image">
 					<include>Home_MainMenuIconF</include>
 					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Icon]</texture>
+				<include>submenu_imagefade</include>
 				</control>
 				<include>Home_MainMenuPanel</include>
 				<control type="image" id="398">
@@ -316,6 +310,90 @@
 					<visible>!Skin.HasSetting(nopictures)</visible>
 					<label>Pictures Plug-ins</label>
 					<thumb>../backdrops/pictures.jpg</thumb>
+				</item>
+			</content>
+		</control>
+
+		<!-- Settings Sub Menu -->
+
+	<control type="fixedlist" id="400">
+			<posx>455</posx>
+			<posy>175</posy>
+			<height>320</height>
+			<width>370</width>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<ondown>400</ondown>
+			<onup>400</onup>
+			<orientation>vertical</orientation>
+			<focusposition>0</focusposition>
+			<scrolltime>0</scrolltime>
+			<visible>Container(300).HasFocus(8)</visible>
+			<animation type="conditional" condition="Container(300).HasFocus(7)">
+				<effect type="slide" start="0,0" end="370,0" time="300" />
+			</animation>
+			<animation type="conditional" condition="Container(300).HasFocus(1000)">
+				<effect type="slide" start="0,0" end="-370,0" time="300" />
+			</animation>
+			<itemlayout width="370" height="320">
+			</itemlayout>
+			<focusedlayout width="370" height="320">
+				<control type="group">
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Icon]</texture>
+				<include>submenu_imagefade</include>
+				</control>
+				<include>Home_MainMenuPanel</include>
+				<control type="image" id="398">
+					<posx>338</posx>
+					<posy>274</posy>
+					<width>12</width>
+					<height>24</height>
+					<texture>arrowhomeup.png</texture>
+					<colordiffuse>HomeWindowTextColour</colordiffuse>
+				</control>
+				<control type="image" id="399">
+					<posx>338</posx>
+					<posy>274</posy>
+					<width>12</width>
+					<height>24</height>
+					<texture>arrowhomedown.png</texture>
+					<colordiffuse>HomeWindowTextColour</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>335</posx>
+					<include>Home_MainMenuLabel</include>
+					<info>Listitem.Label</info>
+				</control>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<description>Settings</description>
+					<onclick>ActivateWindow(4)</onclick>
+					<visible>!Skin.HasSetting(nosettings)</visible>
+					<label>Settings</label>
+					<thumb>../backdrops/settings.jpg</thumb>
+				</item>
+				<item id="2">
+					<description>Skin Settings</description>
+					<onclick>ActivateWindow(56)</onclick>
+					<label>Alaska Settings</label>
+					<thumb>../backdrops/games.jpg</thumb>
+				</item>
+				<item id="3">
+					<description>Shutdown</description>
+					<onclick>XBMC.ShutDownSystem()</onclick>
+					<label>Power Off</label>
+					<thumb>../backdrops/shutdown.jpg</thumb>
+				</item>
+				<item id="4">
+					<description>Sleep</description>
+					<onclick>XBMC.SleepSystem()</onclick>
+					<visible>!Skin.HasSetting(nopictures)</visible>
+					<label>Sleep System</label>
+					<thumb>../backdrops/shutdown.jpg</thumb>
 				</item>
 			</content>
 		</control>
