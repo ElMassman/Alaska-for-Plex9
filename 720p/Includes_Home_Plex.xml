@@ -177,8 +177,8 @@
 			<width>370</width>
 			<onright>300</onright>
 			<onleft>300</onleft>
-			<ondown>100</ondown>
-			<onup>100</onup>
+			<ondown>-</ondown>
+			<onup>-</onup>
 			<orientation>vertical</orientation>
 			<focusposition>0</focusposition>
 			<scrolltime>0</scrolltime>
@@ -203,6 +203,7 @@
 					<height>24</height>
 					<texture>arrowhomeup.png</texture>
 					<colordiffuse>HomeWindowTextColour</colordiffuse>
+					<visible>Container(100).HasPrevious</visible>
 				</control>
 				<control type="image" id="399">
 					<posx>338</posx>
@@ -211,6 +212,7 @@
 					<height>24</height>
 					<texture>arrowhomedown.png</texture>
 					<colordiffuse>HomeWindowTextColour</colordiffuse>
+					<visible>Container(100).HasNext</visible>
 				</control>
 				<control type="label">
 					<posx>335</posx>
@@ -245,8 +247,8 @@
 			<width>370</width>
 			<onright>300</onright>
 			<onleft>300</onleft>
-			<ondown>200</ondown>
-			<onup>200</onup>
+			<ondown>-</ondown>
+			<onup>-</onup>
 			<orientation>vertical</orientation>
 			<focusposition>0</focusposition>
 			<scrolltime>0</scrolltime>
@@ -274,6 +276,7 @@
 					<height>24</height>
 					<texture>arrowhomeup.png</texture>
 					<colordiffuse>HomeWindowTextColour</colordiffuse>
+					<visible>Container(200).HasPrevious</visible>
 				</control>
 				<control type="image" id="399">
 					<posx>338</posx>
@@ -282,6 +285,7 @@
 					<height>24</height>
 					<texture>arrowhomedown.png</texture>
 					<colordiffuse>HomeWindowTextColour</colordiffuse>
+					<visible>Container(200).HasNext</visible>
 				</control>
 				<control type="label">
 					<posx>335</posx>
@@ -323,8 +327,8 @@
 			<width>370</width>
 			<onright>300</onright>
 			<onleft>300</onleft>
-			<ondown>400</ondown>
-			<onup>400</onup>
+			<ondown>-</ondown>
+			<onup>-</onup>
 			<orientation>vertical</orientation>
 			<focusposition>0</focusposition>
 			<scrolltime>0</scrolltime>
@@ -352,6 +356,7 @@
 					<height>24</height>
 					<texture>arrowhomeup.png</texture>
 					<colordiffuse>HomeWindowTextColour</colordiffuse>
+					<visible>Container(400).HasPrevious</visible>
 				</control>
 				<control type="image" id="399">
 					<posx>338</posx>
@@ -360,6 +365,7 @@
 					<height>24</height>
 					<texture>arrowhomedown.png</texture>
 					<colordiffuse>HomeWindowTextColour</colordiffuse>
+					<visible>Container(400).HasNext</visible>
 				</control>
 				<control type="label">
 					<posx>335</posx>
