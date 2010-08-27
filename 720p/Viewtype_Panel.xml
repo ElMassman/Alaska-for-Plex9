@@ -276,7 +276,7 @@
 						<effect type="fade" start="80" end="100" time="400" />
 					</animation>
 					<visible>Control.IsVisible(56) + Window.IsActive(2003)</visible>
-					<visible>Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+					<visible>Container.Content(movies)</visible>
 				</control>
 			</control>
 			<control type="group">

@@ -1,7 +1,204 @@
 <!--Alaska-->
 <includes>
 	<!-- Home Plex -->
-	<include name="Home_MenuPlex">
+
+	<include name="submenuleftright">
+		<onright>SetFocus(800)</onright>
+		<onright>Control.Move(800,1)</onright>
+		<onleft>SetFocus(800)</onleft>
+		<onleft>Control.Move(800,-1)</onleft>
+	</include>
+
+	<include name="nosubmenuleftright">
+		<onright>SetFocus(300)</onright>
+		<onright>Control.Move(300,1)</onright>
+		<onleft>SetFocus(300)</onleft>
+		<onleft>Control.Move(300,-1)</onleft>
+	</include>
+
+	<include name="librarysubmenuhome">
+
+	<control type="fixedlist" id="300">
+			<posx>455</posx>
+			<posy>175</posy>
+			<height>320</height>
+			<width>370</width>
+			<onright>SetFocus(800)</onright>
+		<onright>Control.Move(800,1)</onright>
+		<onleft>SetFocus(800)</onleft>
+		<onleft>Control.Move(800,-1)</onleft>
+			<ondown>-</ondown>
+			<onup>-</onup>
+			<orientation>vertical</orientation>
+			<focusposition>0</focusposition>
+			<scrolltime>0</scrolltime>
+			<visible>Container(800).HasFocus(7) + Skin.HasSetting(librarysubmenu)</visible>
+			<animation type="conditional" condition="Container(800).HasFocus(2)">
+				<effect type="slide" start="0,0" end="370,0" time="300" />
+			</animation>
+			<animation type="conditional" condition="Container(800).HasFocus(6)">
+				<effect type="slide" start="0,0" end="-370,0" time="300" />
+			</animation>
+			<itemlayout width="370" height="320">
+			</itemlayout>
+			<focusedlayout width="370" height="320">
+				<control type="group">
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Property(fanart_image)]</texture>
+				<include>submenu_imagefade</include>
+				</control>
+				<include>Home_MainMenuPanel</include>
+				<control type="image" id="398">
+					<posx>338</posx>
+					<posy>274</posy>
+					<width>12</width>
+					<height>24</height>
+					<texture>arrowhomeup.png</texture>
+					<colordiffuse>HomeWindowTextColour</colordiffuse>
+					<visible>Container(300).HasPrevious</visible>
+				</control>
+				<control type="image" id="399">
+					<posx>338</posx>
+					<posy>274</posy>
+					<width>12</width>
+					<height>24</height>
+					<texture>arrowhomedown.png</texture>
+					<colordiffuse>HomeWindowTextColour</colordiffuse>
+					<visible>Container(300).HasNext</visible>
+				</control>
+				<control type="label">
+					<posx>335</posx>
+					<include>Home_MainMenuLabel</include>
+					<label>[COLOR HomeWindowTextColour2]$INFO[Listitem.Label2][/COLOR] $INFO[Listitem.Label]</label>
+					<visible>!IsEmpty(ListItem.Label2)</visible>
+				</control>
+				<control type="label">
+					<posx>335</posx>
+					<include>Home_MainMenuLabel</include>
+					<info>Listitem.Label</info>
+					<visible>IsEmpty(ListItem.Label2)</visible>
+				</control>
+				</control>
+			</focusedlayout>
+			<content>
+			</content>
+		</control>
+
+		</include>
+
+	<include name="Home_MenuPlex1">
+		<control type="fixedlist" id="300">
+			<posx>-285</posx>
+			<posy>175</posy>
+			<height>400</height>
+			<width>1730</width>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onup>1001</onup>
+			<ondown>1001</ondown>
+			<scrolltime>300</scrolltime>
+			<orientation>horizontal</orientation>
+			<focusposition>2</focusposition>
+			<itemlayout width="370" height="320">
+				<control type="group">
+				<animation type="conditional" condition="True">
+					<effect type="zoom" center="185,160" tween="sine" easing="in" time="0" start="100" end="80" />
+				</animation>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Property(fanart_image)]</texture>
+					<visible>IsEmpty(Listitem.Thumb)</visible>
+				</control>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Icon]</texture>
+				</control>
+				<include>Home_MainMenuPanel</include>
+				<control type="label">
+					<posx>335</posx>
+					<include>Home_MainMenuLabel</include>
+					<label>[COLOR HomeWindowTextColour2]$INFO[Listitem.Label2][/COLOR] $INFO[Listitem.Label]</label>
+					<visible>!IsEmpty(ListItem.Label2)</visible>
+				</control>
+				<control type="label">
+					<posx>335</posx>
+					<include>Home_MainMenuLabel</include>
+					<info>Listitem.Label</info>
+					<visible>IsEmpty(ListItem.Label2)</visible>
+				</control>
+				</control>
+			</itemlayout>
+			<focusedlayout width="370" height="320">
+				<control type="group">
+				<animation type="conditional" condition="True">
+					<effect type="zoom" center="185,160" tween="sine" easing="out" time="200" start="80" end="100" />
+				</animation>
+				<visible>![Container(300).HasFocus(1) | Container(300).HasFocus(2) | Container(300).HasFocus(8)]</visible>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Property(fanart_image)]</texture>
+					<visible>IsEmpty(Listitem.Thumb)</visible>
+				</control>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Thumb]</texture>
+				</control>
+				<control type="image">
+					<include>Home_MainMenuIconF</include>
+					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Icon]</texture>
+				</control>
+				<include>Home_MainMenuPanel</include>
+				<control type="label">
+					<posx>335</posx>
+					<include>Home_MainMenuLabel</include>
+					<label>[COLOR HomeWindowTextColour2]$INFO[Listitem.Label2][/COLOR] $INFO[Listitem.Label]</label>
+					<visible>!IsEmpty(ListItem.Label2)</visible>
+				</control>
+				<control type="label">
+					<posx>335</posx>
+					<include>Home_MainMenuLabel</include>
+					<info>Listitem.Label</info>
+					<visible>IsEmpty(ListItem.Label2)</visible>
+				</control>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<description>Plex Online</description>
+					<onclick>SetFocus(1001)</onclick>
+					<visible>!Skin.HasSetting(noprograms)</visible>
+					<label>Plex Online</label>
+					<thumb>../backdrops/programs.jpg</thumb>
+					<icon>$INFO[Skin.String(CustomProgramsImage)]</icon>
+				</item>
+				<item id="2">
+					<description>Videos</description>
+					<onclick>SetFocus(1001)</onclick>
+					<visible>!Skin.HasSetting(novideos)</visible>
+					<label>Plug-ins</label>
+					<thumb>../backdrops/videos.jpg</thumb>
+				</item>
+				<item id="7">
+					<description>Weather</description>
+					<onclick>Activate.Window(Weather)</onclick>
+					<visible>!Skin.HasSetting(noweather)</visible>
+					<label>Weather</label>
+					<thumb>../backdrops/weather.jpg</thumb>
+				</item>
+				<item id="8">
+					<description>Settings</description>
+					<onclick>ActivateWindow(Settings)</onclick>
+					<visible>!Skin.HasSetting(nosettings)</visible>
+					<label>Settings</label>
+					<thumb>../backdrops/settings.jpg</thumb>
+				</item>
+			</content>
+		</control>
+			
+		</include>
+
+	<include name="Home_MenuPlex2">
 		<control type="fixedlist" id="800">
 			<posx>-285</posx>
 			<posy>175</posy>
@@ -9,7 +206,7 @@
 			<width>1730</width>
 			<onright>800</onright>
 			<onleft>800</onleft>
-			<onup>ActivateWindow(Favourites)</onup>
+			<onup>1001</onup>
 			<ondown>1001</ondown>
 			<scrolltime>300</scrolltime>
 			<orientation>horizontal</orientation>
@@ -91,6 +288,13 @@
 					<label>Plex Library</label>
 					<thumb>../backdrops/pms.png</thumb>
 				</item>
+				<item id="6">
+					<description>Weather</description>
+					<onclick>Activate.Window(Weather)</onclick>
+					<visible>!Skin.HasSetting(noweather)</visible>
+					<label>Weather</label>
+					<thumb>../backdrops/weather.jpg</thumb>
+				</item>
 				<item id="8">
 					<description>Settings</description>
 					<onclick>SetFocus(1001)</onclick>
@@ -100,6 +304,14 @@
 				</item>
 			</content>
 		</control>
+			
+		</include>
+
+	<include name="Home_MenuPlex">
+
+	<include condition="!Skin.HasSetting(librarysubmenu)">Home_MenuPlex1</include>
+
+	<include condition="Skin.HasSetting(librarysubmenu)">Home_MenuPlex2</include>
 
 	</include>
 	
@@ -151,27 +363,61 @@
 
 	<!-- Sub Menus -->
 
-	<include name="home_submenu">
+	<include name="homebuttonsnosub">
 
 	<control type="button" id="1001">
 			<onfocus>SetFocus(100)</onfocus>
+			<onfocus>Control.Move(100,1)</onfocus>
+			<visible>Container(300).HasFocus(1) + Control.IsVisible(100)</visible>
+		</control>
+
+	<control type="button" id="1001">
+			<onfocus>SetFocus(200)</onfocus>
+			<onfocus>Control.Move(200,1)</onfocus>
+			<visible>Container(300).HasFocus(2) + Control.IsVisible(200)</visible>
+		</control>
+
+	<control type="button" id="1001">
+			<onfocus>SetFocus(400)</onfocus>
+			<onfocus>Control.Move(400,1)</onfocus>
+			<visible>Container(300).HasFocus(8) + Control.IsVisible(400)</visible>
+		</control>
+	
+		</include>
+
+	<include name="homebuttonssub">
+
+	<control type="button" id="1001">
+			<onfocus>SetFocus(100)</onfocus>
+			<onfocus>Control.Move(100,1)</onfocus>
 			<visible>Container(800).HasFocus(1) + Control.IsVisible(100)</visible>
 		</control>
 
 	<control type="button" id="1001">
 			<onfocus>SetFocus(200)</onfocus>
+			<onfocus>Control.Move(200,1)</onfocus>
 			<visible>Container(800).HasFocus(2) + Control.IsVisible(200)</visible>
 		</control>
 
 	<control type="button" id="1001">
 			<onfocus>SetFocus(300)</onfocus>
+			<onfocus>Control.Move(300,1)</onfocus>
 			<visible>Container(800).HasFocus(7) + Control.IsVisible(300)</visible>
 		</control>
 
 	<control type="button" id="1001">
 			<onfocus>SetFocus(400)</onfocus>
+			<onfocus>Control.Move(400,1)</onfocus>
 			<visible>Container(800).HasFocus(8) + Control.IsVisible(400)</visible>
 		</control>
+	
+		</include>
+
+	<include name="home_submenu">
+
+	<include condition="!Skin.HasSetting(librarysubmenu)">homebuttonsnosub</include>
+
+	<include condition="Skin.HasSetting(librarysubmenu)">homebuttonssub</include>
 
 	<!-- Plex Online Sub Menu -->
 
@@ -180,15 +426,16 @@
 			<posy>175</posy>
 			<height>320</height>
 			<width>370</width>
-			<onright>800</onright>
-			<onleft>800</onleft>
+			<include condition="!Skin.HasSetting(librarysubmenu)">nosubmenuleftright</include>
+
+	<include condition="Skin.HasSetting(librarysubmenu)">submenuleftright</include>
 			<ondown>-</ondown>
-			<onup>ActivateWindow(Favourites)</onup>
+			<onup>-</onup>
 			<orientation>vertical</orientation>
 			<focusposition>0</focusposition>
 			<scrolltime>0</scrolltime>
-			<visible>Container(800).HasFocus(1)</visible>
-			<animation type="conditional" condition="Container(800).HasFocus(1)">
+			<visible>[Container(300).HasFocus(1) + !Skin.HasSetting(librarysubmenu)] | Container(800).HasFocus(1)</visible>
+			<animation type="conditional" condition="[Container(300).HasFocus(1) + !Skin.HasSetting(librarysubmenu)] | Container(800).HasFocus(1)">
 				<effect type="slide" start="-370,0" end="0,0" time="300" />
 			</animation>
 			<itemlayout width="370" height="320">
@@ -250,18 +497,19 @@
 			<posy>175</posy>
 			<height>320</height>
 			<width>370</width>
-			<onright>800</onright>
-			<onleft>800</onleft>
+			<include condition="!Skin.HasSetting(librarysubmenu)">nosubmenuleftright</include>
+
+	<include condition="Skin.HasSetting(librarysubmenu)">submenuleftright</include>
 			<ondown>-</ondown>
-			<onup>ActivateWindow(Favourites)</onup>
+			<onup>-</onup>
 			<orientation>vertical</orientation>
 			<focusposition>0</focusposition>
 			<scrolltime>0</scrolltime>
-			<visible>Container(800).HasFocus(2)</visible>
-			<animation type="conditional" condition="Container(800).HasFocus(1)">
+			<visible>[Container(300).HasFocus(2) + !Skin.HasSetting(librarysubmenu)] | Container(800).HasFocus(2)</visible>
+			<animation type="conditional" condition="[Container(300).HasFocus(1) + !Skin.HasSetting(librarysubmenu)] | Container(800).HasFocus(1)">
 				<effect type="slide" start="0,0" end="370,0" time="300" />
 			</animation>
-			<animation type="conditional" condition="Container(800).HasFocus(7)">
+			<animation type="conditional" condition="[Container(300).HasFocus(7) + !Skin.HasSetting(librarysubmenu)] | Container(800).HasFocus(7)">
 				<effect type="slide" start="0,0" end="-370,0" time="300" />
 			</animation>
 			<itemlayout width="370" height="320">
@@ -330,16 +578,23 @@
 			<posy>175</posy>
 			<height>320</height>
 			<width>370</width>
-			<onright>800</onright>
-			<onleft>800</onleft>
+			<include condition="!Skin.HasSetting(librarysubmenu)">nosubmenuleftright</include>
+
+	<include condition="Skin.HasSetting(librarysubmenu)">submenuleftright</include>
 			<ondown>-</ondown>
-			<onup>ActivateWindow(Favourites)</onup>
+			<onup>-</onup>
 			<orientation>vertical</orientation>
 			<focusposition>0</focusposition>
 			<scrolltime>0</scrolltime>
-			<visible>Container(800).HasFocus(8)</visible>
+			<visible>[Container(300).HasFocus(8) + !Skin.HasSetting(librarysubmenu)] | Container(800).HasFocus(8)</visible>
 			<animation type="conditional" condition="Container(800).HasFocus(8)">
 				<effect type="slide" start="370,0" end="0,0" time="300" />
+			</animation>
+			<animation type="conditional" condition="Container(300).HasFocus(7) + !Skin.HasSetting(librarysubmenu)">
+				<effect type="slide" start="0,0" end="370,0" time="300" />
+			</animation>
+			<animation type="conditional" condition="Container(300).HasFocus(1000) + !Skin.HasSetting(librarysubmenu)">
+				<effect type="slide" start="0,0" end="-370,0" time="300" />
 			</animation>
 			<itemlayout width="370" height="320">
 			</itemlayout>
@@ -408,70 +663,7 @@
 
 		<!-- PMS Sub Menu -->
 
-	<control type="fixedlist" id="300">
-			<posx>455</posx>
-			<posy>175</posy>
-			<height>320</height>
-			<width>370</width>
-			<onright>800</onright>
-			<onleft>800</onleft>
-			<ondown>-</ondown>
-			<onup>ActivateWindow(Favourites)</onup>
-			<orientation>vertical</orientation>
-			<focusposition>0</focusposition>
-			<scrolltime>0</scrolltime>
-			<visible>Container(800).HasFocus(7)</visible>
-			<animation type="conditional" condition="Container(800).HasFocus(2)">
-				<effect type="slide" start="0,0" end="370,0" time="300" />
-			</animation>
-			<animation type="conditional" condition="Container(800).HasFocus(8)">
-				<effect type="slide" start="0,0" end="-370,0" time="300" />
-			</animation>
-			<itemlayout width="370" height="320">
-			</itemlayout>
-			<focusedlayout width="370" height="320">
-				<control type="group">
-				<control type="image">
-					<include>Home_MainMenuIconF</include>
-					<texture diffuse="mainmenu/homematte.png">$INFO[Listitem.Property(fanart_image)]</texture>
-				<include>submenu_imagefade</include>
-				</control>
-				<include>Home_MainMenuPanel</include>
-				<control type="image" id="398">
-					<posx>338</posx>
-					<posy>274</posy>
-					<width>12</width>
-					<height>24</height>
-					<texture>arrowhomeup.png</texture>
-					<colordiffuse>HomeWindowTextColour</colordiffuse>
-					<visible>Container(300).HasPrevious</visible>
-				</control>
-				<control type="image" id="399">
-					<posx>338</posx>
-					<posy>274</posy>
-					<width>12</width>
-					<height>24</height>
-					<texture>arrowhomedown.png</texture>
-					<colordiffuse>HomeWindowTextColour</colordiffuse>
-					<visible>Container(300).HasNext</visible>
-				</control>
-				<control type="label">
-					<posx>335</posx>
-					<include>Home_MainMenuLabel</include>
-					<label>[COLOR HomeWindowTextColour2]$INFO[Listitem.Label2][/COLOR] $INFO[Listitem.Label]</label>
-					<visible>!IsEmpty(ListItem.Label2)</visible>
-				</control>
-				<control type="label">
-					<posx>335</posx>
-					<include>Home_MainMenuLabel</include>
-					<info>Listitem.Label</info>
-					<visible>IsEmpty(ListItem.Label2)</visible>
-				</control>
-				</control>
-			</focusedlayout>
-			<content>
-			</content>
-		</control>
+	<include condition="Skin.HasSetting(librarysubmenu)">librarysubmenuhome</include>
 
 		</include>
 

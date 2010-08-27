@@ -122,7 +122,7 @@
 					<colordiffuse>88ffffff</colordiffuse>							
 				</control>
 				<control type="image">
-					<colordiffuse>FlagDiffuse</colordiffuse>
+					<colordiffuse>FlagText</colordiffuse>
 					<posx>8</posx>
 					<posy>8</posy>
 					<width>55</width>
@@ -140,15 +140,15 @@
 					<posx>-4</posx>
 					<width>73</width>
 					<include>PosterMediaFlagsVars</include>
-					<texture>flags/frame_res.png</texture>
+					<texture>flags/frame_year.png</texture>
 					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
 				</control>
 				<control type="image">
 					<posx>-3</posx>
 					<width>71</width>
 					<height>36</height>
-					<include>PosterMediaFlagsVars</include>
-					<texture>$INFO[ListItem.Property(mediaTag::videoResolution)]</texture>
+					<include>PosterMediaFlagsVarsCodec</include>
+					<texture diffuse="flags/flagdiff.png">$INFO[ListItem.Property(mediaTag::videoResolution)]</texture>
 					<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="image">
@@ -162,8 +162,8 @@
 					<posx>77</posx>
 					<width>71</width>
 					<height>36</height>
-					<include>PosterMediaFlagsVars</include>
-					<texture>$INFO[ListItem.Property(mediaTag::aspectRatio)]</texture>
+					<include>PosterMediaFlagsVarsCodec</include>
+					<texture diffuse="flags/flagdiff.png">$INFO[ListItem.Property(mediaTag::aspectRatio)]</texture>
 					<aspectratio>stretch</aspectratio>
 				</control>
 

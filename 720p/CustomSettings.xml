@@ -232,6 +232,15 @@
 						<onclick>SetFocus(9000)</onclick>
 						<visible>Skin.HasSetting(home3)</visible>
 					</control>
+					<control type="radiobutton" id="6272">
+						<include>SettingsLabel</include>
+						<textoffsetx>20</textoffsetx>
+						<label>Use Submenus for Home Library Items</label>
+						<onclick>Skin.ToggleSetting(librarysubmenu)</onclick>
+						<selected>Skin.HasSetting(librarysubmenu)</selected>
+					<onclick>Skin.Reset(home1)</onclick>
+												<visible>![Skin.HasSetting(home2) | Skin.HasSetting(home3)]</visible>
+					</control>
 					<control type="radiobutton" id="251">
 						<include>SettingsLabel</include>
 						<textoffsetx>20</textoffsetx>

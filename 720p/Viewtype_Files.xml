@@ -1,6 +1,8 @@
 <includes>
 	<include name="Viewtype_Files">
 		<!-- Browser -->
+		<control type="group">
+			<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 		<control type="fixedlist" id="55">
 			<posx>0</posx>
 			<posy>94</posy>
@@ -32,7 +34,7 @@
 					<selectedcolor>ListSelectedNF</selectedcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<scroll>false</scroll>
-					<visible>IsEmpty(ListItem.Title) | IsEmpty(ListItem.Episode) + [Window.IsVisible(6) | ![Window.IsVisible(1) | Window.IsVisible(502) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
+					<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 				</control>
 				<control type="label">
 					<posx>770</posx>
@@ -143,7 +145,7 @@
 					<selectedcolor>ListSelectedNF</selectedcolor>
 					<label>$INFO[ListItem.Episode]$INFO[ListItem.Title,. ]</label>
 					<scroll>false</scroll>
-					<visible>Window.IsActive(6) + Container.Content(episodes) + [!Skin.HasSetting(tvoverlays) | [Skin.HasSetting(tvoverlays) + !stringcompare(ListItem.Overlay,OverlayWatched.png) + ![stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.1.EpisodeTitle)) | stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.2.EpisodeTitle)) | stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.3.EpisodeTitle)) | stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.4.EpisodeTitle)) | stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.5.EpisodeTitle))]]]</visible>
+					<visible>Window.IsActive(6) + Container.Content(episodes) + !Skin.HasSetting(tvoverlays)</visible>
 				</control>
 				<control type="label">
 					<posx>770</posx>
@@ -157,7 +159,7 @@
 					<selectedcolor>ListSelectedNF</selectedcolor>
 					<label>$INFO[ListItem.Episode]$INFO[ListItem.Title,. , ][COLOR EpisodeWatchedNF]&#134;[/COLOR]</label>
 					<scroll>false</scroll>
-					<visible>Window.IsActive(6) + Container.Content(episodes) + Skin.HasSetting(tvoverlays) + stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+					<visible>Window.IsActive(6) + Container.Content(episodes) + Skin.HasSetting(tvoverlays)</visible>
 				</control>
 				<control type="label">
 					<posx>770</posx>
@@ -171,7 +173,7 @@
 					<selectedcolor>ListSelectedNF</selectedcolor>
 					<label>$INFO[ListItem.Episode]$INFO[ListItem.Title,. , ][COLOR EpisodeWatchedNF]&#135;[/COLOR]</label>
 					<scroll>false</scroll>
-					<visible>Window.IsActive(6) + Container.Content(episodes) + Skin.HasSetting(tvoverlays) + !stringcompare(ListItem.Overlay,OverlayWatched.png) + [stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.1.EpisodeTitle)) | stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.2.EpisodeTitle)) | stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.3.EpisodeTitle)) | stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.4.EpisodeTitle)) | stringcompare(ListItem.Title,Window(0).Property(LatestEpisode.5.EpisodeTitle))]</visible>
+					<visible>Window.IsActive(6) + Container.Content(episodes) + Skin.HasSetting(tvoverlays)</visible>
 				</control>
 			</itemlayout>
 			<focusedlayout width="870" height="62">
@@ -563,6 +565,7 @@
 				</animation>
 				<visible>Control.IsVisible(55) + Window.IsActive(2003)</visible>
 			</control>
+		</control>
 		</control>
 	</include>
 </includes>
