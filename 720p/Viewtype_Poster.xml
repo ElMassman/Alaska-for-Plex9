@@ -112,6 +112,18 @@
 			</control>
 			<control type="label">
 				<posx>346</posx>
+				<posy>50</posy>
+				<width>428</width>
+				<height>60</height>
+				<aligny>center</aligny>
+				<font>Font_Date</font>
+				<textcolor>PosterTitle</textcolor>
+				<label>[B]$INFO[ListItem.Title][/B]</label>
+				<visible>Container.Content(tvshows) | Container.Content(movies)</visible>
+				<include>Animation_HiddenByInfo</include>
+			</control>
+			<control type="label">
+				<posx>346</posx>
 				<posy>80</posy>
 				<width>428</width>
 				<height>50</height>

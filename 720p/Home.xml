@@ -1,6 +1,6 @@
 <!--Alaska-->
 <window id="0">
-	<defaultcontrol always="true">800</defaultcontrol><!--5043-->
+	<defaultcontrol always="true">300</defaultcontrol><!--5043-->
 	<allowoverlay>yes</allowoverlay>
 	<controls>
 		<!--control type="button" id="5043">
