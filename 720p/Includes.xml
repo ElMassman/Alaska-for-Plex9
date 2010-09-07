@@ -997,7 +997,7 @@
 				<include>Animation_SlideDownFadeOut</include>
 				<control type="group">
 					<visible>!Skin.HasSetting(ShowGlobalTemp)</visible>
-					<control type="label">
+					<!--control type="label">
 						<width>300</width>
 						<font>Font_Time</font>
 						<textcolor>Time</textcolor>
@@ -1012,19 +1012,18 @@
 						<label>$INFO[System.Time(hh:mm)] [COLOR TimeAMPM]$LOCALIZE[40156][/COLOR]</label>
 						<align>right</align>
 						<visible>substring(system.time,PM,right)</visible>
-					</control>
+					</control-->
 					<control type="label">
 						<width>300</width>
 						<font>Font_Time</font>
 						<textcolor>Time</textcolor>
 						<info>System.Time(hh:mm)</info>
 						<align>right</align>
-						<visible>![substring(system.time,PM,right) | substring(system.time,AM,right)]</visible>
 					</control>
 				</control>
 				<control type="group">
 					<visible>Skin.HasSetting(ShowGlobalTemp)</visible>
-					<control type="label">
+					<!--control type="label">
 						<width>300</width>
 						<font>Font_Time</font>
 						<textcolor>Time</textcolor>
@@ -1039,15 +1038,13 @@
 						<label>$INFO[System.Time(hh:mm)] [COLOR TimeAMPM]$LOCALIZE[40156][/COLOR] $INFO[Weather.Temperature]</label>
 						<align>right</align>
 						<visible>substring(system.time,PM,right)</visible>
-					</control>
+					</control-->
 					<control type="label">
 						<width>300</width>
 						<font>Font_Time</font>
 						<textcolor>Time</textcolor>
 						<label>$INFO[System.Time(hh:mm)] $INFO[Weather.Temperature]</label>
-						<align>right</align>
-						<visible>![substring(system.time,PM,right) | substring(system.time,AM,right)]</visible>
-					</control>
+						<align>right</align>		</control>
 				</control>
 				<control type="label">
 					<posx>-2</posx>
@@ -1077,10 +1074,8 @@
 				<textcolor>OSDPlayingDuration</textcolor>
 			</control>
 			<control type="progress" id="23">
-				<texturebg>osd/osd_progress_back.png</texturebg>
-				<lefttexture>osd/osd_progress_left.png</lefttexture>
-				<midtexture>osd/osd_progress_mid.png</midtexture>
-				<righttexture>osd/osd_progress_right.png</righttexture>
+				<texturebg border="5">osd/osd_progress_back.png</texturebg>
+				<midtexture border="5">osd/osd_progress_mid.png</midtexture>
 				<colordiffuse>OSDProgressBar</colordiffuse>
 				<info>Player.Progress</info>
 				<posx>120</posx>
